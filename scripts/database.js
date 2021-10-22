@@ -1,0 +1,100 @@
+/*
+
+    This module contains all of the data, or state, for the
+    application. It exports two functions that allow other
+    modules to get copies of the state.
+
+*/
+const database = {
+    styles: [
+        { id: 1, style: "Classic", price: 500 },
+        { id: 2, style: "Modern", price: 710 },
+        { id: 3, style: "Vintage", price: 965 }
+    ],
+    sizes: [
+        { id: 1, carets: 0.5, price: 405 },
+        { id: 2, carets: 0.75, price: 782 },
+        { id: 3, carets: 1, price: 1470 },
+        { id: 4, carets: 1.5, price: 1997 },
+        { id: 5, carets: 2, price: 3638 }
+    ],
+    metals: [
+        { id: 1, metal: "Sterling Silver", price: 12.42 },
+        { id: 2, metal: "14K Gold", price: 736.4 },
+        { id: 3, metal: "24K Gold", price: 1258.9 },
+        { id: 4, metal: "Platinum", price: 795.45 },
+        { id: 5, metal: "Palladium", price: 1241.0 }
+    ],
+    varieties: [
+        { id: 1, style: "Ring", priceAdjustment: 1},
+        { id: 2, style: "Earrings", priceAdjustment: 2},
+        { id: 3, style: "Necklace", priceAdjustment: 4},
+    ],
+    customOrders: [
+    ],
+    // User choices change the "state" of the application, so there must be a way to store that state.  State is always stored in a database (or data store).
+    orderBuilder: {}
+}
+
+
+export const getVarieties = () => {
+    return database.varieties.map(variety => ({...variety}))
+}
+
+export const setVariety = (id) => {
+    database.orderBuilder.varietyId = id
+}
+
+export const getStyles = () => {
+    return database.styles.map(style => ({...style}))
+}
+
+export const setStyle = (id) => {
+    database.orderBuilder.styleId = id
+}
+
+export const getSizes = () => {
+    return database.sizes.map(size => ({...size}))
+}
+
+export const setSize = (id) => {
+    database.orderBuilder.sizeId = id
+}
+
+export const getMetals = () => {
+    return database.metals.map(metal => ({...metal}))
+}
+
+export const setMetal = (id) => {
+    database.orderBuilder.metalId = id
+}
+
+export const getCustomOrders = () => {
+    return database.customOrders.map(customOrder => ({...customOrder}))
+}
+
+export const addCustomOrder = () => {
+    // Copy the current state of user choices
+    const newOrder = {...database.orderBuilder}
+
+    // Add a new primary key to the object
+    if ( database.customOrders.length === 0 ) {
+        newOrder.id = 1
+    } else {
+        const lastIndex = database.customOrders.length - 1
+        newOrder.id = database.customOrders[lastIndex].id + 1
+    }
+
+    // Add a timestamp to the order
+    const date = new Date()
+    newOrder.timestamp = date.toLocaleDateString
+
+    // Add the new order object to custom orders state
+    database.customOrders.push(newOrder)
+
+    // Reset the temporary state for user choices
+    database.orderBuilder = {}
+
+    // Broadcast a notification that permanent state has changed
+    document.dispatchEvent(new CustomEvent("stateChanged"))
+}
