@@ -12,17 +12,14 @@ document.addEventListener(
 )
 
 export const Varieties = () => {
-    let html = "<ul>"
+    let html = ""
 
     // Use .map() for converting objects to <li> elements
     const listItems = varieties.map(variety => {
-        return `<li>
-            <input type="radio" name="variety" value="${variety.id}" /> ${variety.style}
-        </li>`
+        return `<input type="radio" name="variety" value="${variety.id}" /> ${variety.style}`
     })
 
-    html += listItems.join("")
-    html += "</ul>"
+    html += listItems.join(" ")
 
     return html
 }
