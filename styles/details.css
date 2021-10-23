@@ -1,5 +1,10 @@
 /* You need to create the rest of styles for the layout shown */
 
+body {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
 .options {
     flex-basis: 24%;
     margin: 0 2rem;
@@ -9,3 +14,20 @@
     box-shadow: 0.25rem 0.25rem 0.5rem rgb(143, 143, 143);
 }
 
+.choices {
+    display: flex;
+}
+
+.choices__metals,
+.choices__sizes,
+.choices__styles {
+    max-width: 25%;
+}
+
+.choices__varieties {
+    padding: 2em 0 0 2em;
+}
+
+.customOrders {
+    margin-left: 2em;
+}
