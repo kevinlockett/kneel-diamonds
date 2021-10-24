@@ -4,7 +4,7 @@ import { DiamondSizes } from "./DiamondSizes.js"
 import { Metals } from "./Metals.js"
 import { JewelryStyles } from "./JewelryStyles.js"
 import { CustomOrders } from "./CustomOrders.js"
-import { addCustomOrder } from "./database.js"
+import { addCustomOrder } from "./dataAccess.js"
 
 
 document.addEventListener(

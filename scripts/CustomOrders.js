@@ -1,8 +1,4 @@
-import { getCustomOrders } from "./database.js"
-import { getMetals } from "./database.js"
-import { getSizes } from "./database.js"
-import { getStyles } from "./database.js"
-import { getVarieties } from "./database.js"
+import { getMetals, getSizes, getStyles, getVarieties, getCustomOrders } from "./dataAccess.js"
 
 const buildOrderListItem = (order) => {
 
