@@ -1,4 +1,4 @@
-import { getSizes, setSize } from "./database.js"
+import { getSizes, setSize, getSize } from "./dataAccess.js"
 
 const sizes = getSizes()
 
@@ -9,17 +9,30 @@ document.addEventListener(
             setSize(parseInt(event.target.value))
         }
     }
-)
+    )
+    
+    export const DiamondSizes = () => {
+        let html = "<ul>"
+        
+        const sizeButton = getSize()
+        
+        // Use .map() for converting objects to <li> elements
+        const listItems = sizes.map(size => {
+            
+            if (size.id === sizeButton) {
 
-export const DiamondSizes = () => {
-    let html = "<ul>"
+                return `<li>
+                    <input type="radio" name="size" value="${size.id}" checked='checked'/> ${size.carets}
+                </li>`
+            } else {
 
-    // Use .map() for converting objects to <li> elements
-    const listItems = sizes.map(size => {
-        return `<li>
-            <input type="radio" name="size" value="${size.id}" /> ${size.carets}
-        </li>`
-    })
+                return `<li>
+                    <input type="radio" name="size" value="${size.id}" /> ${size.carets}
+                </li>`
+
+            }
+        
+        })
 
     html += listItems.join("")
     html += "</ul>"
