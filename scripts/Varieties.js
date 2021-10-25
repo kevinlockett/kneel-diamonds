@@ -1,4 +1,4 @@
-import { getVarieties, setVariety, getVariety } from "./dataAccess.js"
+import { getVarieties, setVariety, getVarietyPreselector } from "./dataAccess.js"
 
 const varieties = getVarieties()
 
@@ -14,7 +14,7 @@ document.addEventListener(
 export const Varieties = () => {
     let html = ""
 
-    const varietyButton = getVariety()
+    const varietyButton = getVarietyPreselector()
 
     // Use .map() for converting objects to <li> elements
     const listItems = varieties.map(variety => {

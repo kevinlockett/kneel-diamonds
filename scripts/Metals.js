@@ -1,4 +1,4 @@
-import { getMetals, setMetal, getMetal } from "./dataAccess.js"
+import { getMetals, setMetal, getMetalPreselector } from "./dataAccess.js"
 
 const metals = getMetals()
 
@@ -14,7 +14,7 @@ document.addEventListener(
 export const Metals = () => {
     let html = "<ul>"
 
-    const metalButton = getMetal()
+    const metalButton = getMetalPreselector()
 
     // This is how you have been converting objects to <li> elements
     for (const metal of metals) {
