@@ -1,4 +1,4 @@
-import { getSizes, setSize, getSize } from "./dataAccess.js"
+import { getSizes, setSize, getSizePreselector } from "./dataAccess.js"
 
 const sizes = getSizes()
 
@@ -14,7 +14,7 @@ document.addEventListener(
     export const DiamondSizes = () => {
         let html = "<ul>"
         
-        const sizeButton = getSize()
+        const sizeButton = getSizePreselector()
         
         // Use .map() for converting objects to <li> elements
         const listItems = sizes.map(size => {

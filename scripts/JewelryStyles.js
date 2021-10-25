@@ -1,4 +1,4 @@
-import { getStyles, setStyle, getStyle } from "./dataAccess.js"
+import { getStyles, setStyle, getStylePreselector } from "./dataAccess.js"
 
 const styles = getStyles()
 
@@ -15,7 +15,7 @@ export const JewelryStyles = () => {
     let html = "<ul>"
 
     
-    const styleButton = getStyle()
+    const styleButton = getStylePreselector()
     
     // Use .map() for converting objects to <li> elements
     const listItemsArray = styles.map(style => {
