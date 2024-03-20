@@ -12,16 +12,31 @@ textarea {
 	font-family: "Comfortaa", Arial, sans-serif;
 	font-size: 14px;
 	line-height: 1.5;
+  max-height: 100%;
 }
 
 h1,h2,h3,h4,h5,h6 {
   font-family: "Patua One", serif;
   letter-spacing: 2px;
+  text-shadow: rgba(103, 128, 159, .5) .8px .8px 1.5px;
 }
 
 ul {
     list-style-type: none;
     padding-inline-start: 0.25rem;
+}
+
+li {
+  font-weight: 900;
+}
+
+html { 
+  background: url("/img/diamond.png") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  max-height: 100%;
+  background-size: cover;
 }
 
 #orderButton {
@@ -31,4 +46,5 @@ ul {
     color: lightgoldenrodyellow;
     font-size: 1rem;
 }
+
 

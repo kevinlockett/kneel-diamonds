@@ -1,11 +1,10 @@
-
-import { addCustomOrder } from "./dataAccess.js"
+import { placeOrder } from "./transientState.js"
 
 document.addEventListener(
     "click",
     (event) => {
         if (event.target.id === "orderButton") {
-        addCustomOrder()
+        placeOrder()
         }
     }
 )
@@ -13,4 +12,3 @@ document.addEventListener(
 export const OrderButton = () => {
     return `<button id="orderButton">Create Custom Order</button>`
 }
-

@@ -8,10 +8,11 @@ body {
 .options {
     flex-basis: 24%;
     margin: 0 2rem;
-    border: 1px dashed dodgerblue;
+    border: 1px dashed rgba(103, 128, 159, 1);
     padding: 1rem;
     border-radius: 0.5rem;
     box-shadow: 0.25rem 0.25rem 0.5rem rgb(143, 143, 143);
+    background: rgba(103, 128, 159, .5)
 }
 
 .choices {

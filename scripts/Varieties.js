@@ -1,39 +1,39 @@
-import { getVarieties, setVariety, getVarietyPreselector } from "./dataAccess.js"
+// import { getVarieties, setVariety, getVarietyPreselector } from "./dataAccess.js"
 
-const varieties = getVarieties()
+// const varieties = getVarieties()
 
-document.addEventListener(
-    "change",
-    (event) => {
-        if (event.target.name === "variety") {
-            setVariety(parseInt(event.target.value))
-        }
-    }
-)
+// document.addEventListener(
+//     "change",
+//     (event) => {
+//         if (event.target.name === "variety") {
+//             setVariety(parseInt(event.target.value))
+//         }
+//     }
+// )
 
-export const Varieties = () => {
-    let html = ""
+// export const Varieties = () => {
+//     let html = ""
 
-    const varietyButton = getVarietyPreselector()
+//     const varietyButton = getVarietyPreselector()
 
-    // Use .map() for converting objects to <li> elements
-    const listItems = varieties.map(variety => {
+//     // Use .map() for converting objects to <li> elements
+//     const listItems = varieties.map(variety => {
 
-        if (variety.id === varietyButton) {
+//         if (variety.id === varietyButton) {
 
-            return `<input type="radio" name="variety" value="${variety.id}" checked = 'checked'/> ${variety.style}`
+//             return `<input type="radio" name="variety" value="${variety.id}" checked = 'checked'/> ${variety.style}`
 
-        } else {
+//         } else {
 
-            return `<input type="radio" name="variety" value="${variety.id}" /> ${variety.style}`
+//             return `<input type="radio" name="variety" value="${variety.id}" /> ${variety.style}`
 
-        }
+//         }
 
-    })
+//     })
 
-    html += listItems.join(" ")
+//     html += listItems.join(" ")
 
-    return html
+//     return html
     
-}
+// }
 

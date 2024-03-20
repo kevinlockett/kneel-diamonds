@@ -1,0 +1,20 @@
+{
+  "name": "kneel-diamonds",
+  "version": "1.0.0",
+  "description": "NSS Book-4 - Kneel Diamonds",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kevinlockett/kneel-diamonds.git"
+  },
+  "author": "Kevin Lockett",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevinlockett/kneel-diamonds/issues"
+  },
+  "homepage": "https://github.com/kevinlockett/kneel-diamonds#readme"
+}
