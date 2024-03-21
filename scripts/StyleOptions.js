@@ -6,15 +6,6 @@ const handleStyleChoice = (event) => {
     }
 }
 
-// document.addEventListener(
-//     "change",
-//     (event) => {
-//         if (event.target.name === "style") {
-//             setStyle(parseInt(event.target.value))
-//         }
-//     }
-// )
-
 export const StyleOptions = async () => {
     const response = await fetch("http://localhost:8088/styles")
     const styles = await response.json()
@@ -27,19 +18,6 @@ export const StyleOptions = async () => {
 
     const stylesArr = styles.map(
         (style) => {
-
-//     const styleButton = getStylePreselector()
-    
-//     // Use .map() for converting objects to <li> elements
-//     const listItemsArray = styles.map(style => {
-            
-//         if (style.id === styleButton) {
-
-//             return `<li>
-//                 <input type="radio" name="style" value="${style.id}" checked='checked'/> ${style.style}
-//             </li>`
-    
-//         } else {
 
             return `
                 <li>

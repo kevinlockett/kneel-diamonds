@@ -1,4 +1,3 @@
-// import { KneelDiamonds } from "./KneelDiamonds.js"
 import { MetalOptions } from "./MetalOptions.js"
 import { OrderButton } from "./OrderButton.js"
 import { Orders } from "./Orders.js"

@@ -6,15 +6,6 @@ const handleMetalChoice = (event) => {
     }
 }
 
-// document.addEventListener(
-//     "change",
-//     (event) => {
-//         if (event.target.name === "metal") {
-//             setMetal(parseInt(event.target.value))
-//         }
-//     }
-// )
-
 export const MetalOptions = async () => {
     const response = await fetch("http://localhost:8088/metals")
     const metals = await response.json()
@@ -27,14 +18,6 @@ export const MetalOptions = async () => {
 
     const metalsArr = metals.map(
         (metal) => {
-
-        // if (metal.id === metalButton) {
-            
-        //     html += `<li>
-        //         <input type="radio" name="metal" value="${metal.id}" checked='checked' /> ${metal.metal}
-        //     </li>`
-
-        // } else {
 
             return `
                 <li>
