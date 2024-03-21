@@ -21,7 +21,7 @@ export const SizeOptions = async () => {
     document.addEventListener("change", handleSizeChoice)
     
     let sizeOptionsHTML = `
-        <h2>Sizes</h2>
+        <h2>Diamond Carat Sizes</h2>
         <ul>`
 
     const sizeArr = sizes.map(
@@ -42,7 +42,7 @@ export const SizeOptions = async () => {
 
             return `
                 <li>
-                     <input type="radio" name="size" value="${size.id}" /> ${size.carets}
+                     <input type="radio" name="size" value="${size.id}" /> ${size.carats}
                  </li>`
 
         }

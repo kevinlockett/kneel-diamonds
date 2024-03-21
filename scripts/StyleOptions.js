@@ -22,7 +22,7 @@ export const StyleOptions = async () => {
     document.addEventListener("change", handleStyleChoice)
     
     let sizeOptionsHTML = `
-        <h2>Styles</h2>
+        <h2>Jewelry Styles</h2>
         <ul>`
 
     const stylesArr = styles.map(

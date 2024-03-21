@@ -22,7 +22,7 @@ export const MetalOptions = async () => {
     document.addEventListener("change", handleMetalChoice)
     
     let metalOptionsHTML = `
-        <h2>Metals</h2>
+        <h2>Precious Metals</h2>
         <ul>`
 
     const metalsArr = metals.map(
