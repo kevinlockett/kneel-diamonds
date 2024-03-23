@@ -70,7 +70,7 @@
       "price": 965
     }
   ],
-  "varieties": [
+  "types": [
     {
       "id": 1,
       "style": "Ring",
@@ -92,13 +92,29 @@
       "id": "7d7f",
       "metalId": 4,
       "sizeId": 2,
-      "styleId": 3
+      "styleId": 3,
+      "typeId": 1
     },
     {
-      "id": "9e8e",
+      "id": "a424",
       "metalId": 2,
+      "sizeId": 2,
+      "styleId": 2,
+      "typeId": 2
+    },
+    {
+      "id": "f201",
+      "metalId": 5,
+      "sizeId": 5,
+      "styleId": 3,
+      "typeId": 3
+    },
+    {
+      "id": "6a17",
+      "metalId": 4,
       "sizeId": 3,
-      "styleId": 2
+      "styleId": 2,
+      "typeId": 3
     }
   ]
 }

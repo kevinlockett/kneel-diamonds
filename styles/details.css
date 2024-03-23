@@ -25,10 +25,21 @@ body {
     max-width: 25%;
 }
 
-.choices__varieties {
+.choices__types {
     padding: 2em 0 0 2em;
 }
 
 .customOrders {
     margin-left: 2em;
+}
+
+.types {
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.type {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-right: 1rem;
 }

@@ -1,6 +1,6 @@
 export const Orders = async () => {
     const response = await fetch(
-        "http://localhost:8088/orders?_embed=metal&_embed=size&_embed=style"
+        "http://localhost:8088/orders?_embed=metal&_embed=size&_embed=style&_embed=type"
     )
     const orders = await response.json()
 
@@ -11,7 +11,9 @@ export const Orders = async () => {
     const ordersArr = orders.map(
         (order) => {
 
-            const orderPrice = order.metal.price + order.size.price + order.style.price
+            var subTotalPrice = order.metal.price + order.size.price + order.style.price
+
+            const totalPrice = subTotalPrice * order.type.priceAdjustment
 
             const USDollar = new Intl.NumberFormat('en-US', {
                 style: 'currency',
@@ -21,8 +23,8 @@ export const Orders = async () => {
             return `
             <div>
                 <b>Order:</b> #${order.id} 
-                <b>| Description:</b> A ${order.size.carats} carat diamond set in a ${order.style.style} style ${order.metal.metal} ring
-                <b>| Cost:</b> ${USDollar.format(orderPrice)}
+                <b>| Description:</b> A ${order.size.carats} carat diamond set in a ${order.style.style} style ${order.metal.metal} ${order.type.style}
+                <b>| Cost:</b> ${USDollar.format(totalPrice)}
             </div>`
             
         }

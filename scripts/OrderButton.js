@@ -1,10 +1,10 @@
-import { placeOrder } from "./transientState.js"
+import { submitOrder } from "./transientState.js"
 
 document.addEventListener(
     "click",
     (event) => {
         if (event.target.id === "orderButton") {
-        placeOrder()
+        submitOrder()
         }
     }
 )

@@ -1,39 +1,41 @@
-import { MetalOptions } from "./MetalOptions.js"
+import { Metals } from "./Metals.js"
 import { OrderButton } from "./OrderButton.js"
 import { Orders } from "./Orders.js"
-import { SizeOptions } from "./SizeOptions.js"
-import { StyleOptions } from "./StyleOptions.js"
+import { Sizes } from "./Sizes.js"
+import { Styles } from "./Styles.js"
+import { Types } from "./Types.js"
 
 const container = document.querySelector("#container")
 
 const render = async () => {
-    const metalOptionsHTML = await MetalOptions()
+    const metalsHTML = await Metals()
     const ordersHTML = await Orders()
-    const placeOrderButton = OrderButton()
-    const sizeOptionsHTML = await SizeOptions()
-    const styleOptionsHTML = await StyleOptions()
+    const buttonHTML = OrderButton()
+    const sizesHTML = await Sizes()
+    const stylesHTML = await Styles()
+    const typesHTML = await Types()
 
     const composedHTML = `
         <h1>Kneel Diamonds</h1>
 
         <article class="choices choice__container">
             <section class="choices__metals options">
-                ${metalOptionsHTML}
+                ${metalsHTML}
             </section>
             <section class="choices__sizes options">
-                ${sizeOptionsHTML}
+                ${sizesHTML}
             </section>
             <section class="choices__styles options">
-                ${styleOptionsHTML}
+                ${stylesHTML}
             </section>
         </article>
     
-        <article class="choices__varieties">
-                <h2>Varieties</h2>
+        <article class="choices__types">
+            ${typesHTML}
         </article>
     
         <article class="orderButton">
-            ${placeOrderButton}
+            ${buttonHTML}
         </article>
     
         <article class="customOrders">
@@ -43,10 +45,16 @@ const render = async () => {
 
     container.innerHTML = composedHTML
 
-    document.addEventListener("newOrderCreated", event => {
-        console.log("State of data has Changed. Regenerating HTML...")
-        render()
-    })
 }
 
 render()
+
+document.addEventListener("orderSubmitted", event => {
+    console.log("Order Submitted. Regenerating HTML...")
+    render()
+})
+
+document.addEventListener("stateChanged", event => {
+    console.log("State of data has Changed. Regenerating HTML...")
+    render()
+})
